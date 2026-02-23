@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Boarding Pass — json-os web component</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f1f5f9; }
+  </style>
+</head>
+<body>
+
+<script type="application/ld+json">
+{
+  "@context": {
+    "schema": "http://schema.org/"
+  },
+  "@id": "#flight",
+  "@type": "schema:Flight",
+  "@view": "https://melvin.me/public/jsonos/flight.js",
+  "schema:flightNumber": "1742",
+  "schema:departureTime": "2025-03-15T14:30:00Z",
+  "schema:arrivalTime": "2025-03-15T17:45:00Z",
+  "schema:boardingTime": "2025-03-15T13:50:00Z",
+  "schema:departureGate": "B22",
+  "schema:passengerSeat": "14A",
+  "schema:passengerName": "Melvin Carvalho",
+  "schema:flightStatus": "On Time",
+  "schema:provider": {
+    "@type": "schema:Airline",
+    "schema:name": "Atlantic Airways",
+    "schema:iataCode": "RC"
+  },
+  "schema:departureAirport": {
+    "@type": "schema:Airport",
+    "schema:name": "London Heathrow",
+    "schema:iataCode": "LHR"
+  },
+  "schema:arrivalAirport": {
+    "@type": "schema:Airport",
+    "schema:name": "Lisbon Portela",
+    "schema:iataCode": "LIS"
+  }
+}
+</script>
+
+<!-- 4KB instead of 1.4MB -->
+<script type="module" src="../json-os.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "json-os",
+  "version": "0.1.0",
+  "description": "Zero-dependency <json-os> web component for rendering JSON-LD panes",
+  "type": "module",
+  "main": "json-os.js",
+  "module": "json-os.js",
+  "exports": {
+    ".": {
+      "import": "./json-os.js",
+      "default": "./json-os.js"
+    }
+  },
+  "files": [
+    "json-os.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/json-os/webcomponent.git"
+  },
+  "keywords": [
+    "json-ld",
+    "web-component",
+    "jsonos",
+    "panes",
+    "schema-org",
+    "linked-data"
+  ],
+  "license": "MIT",
+  "homepage": "https://jsonos.com"
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTFU Model — json-os web component</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f6f8fa; }
+  </style>
+</head>
+<body>
+
+<!-- Web component syntax: JSON-LD inline -->
+<json-os>
+  <script type="application/ld+json">
+  {
+    "@context": { "schema": "http://schema.org/" },
+    "@id": "#htfu",
+    "@type": "schema:TechArticle",
+    "@view": "https://melvin.me/public/jsonos/htfu.js",
+    "schema:name": "The HTFU Model",
+    "schema:alternativeHeadline": "Bitcoin Consensus Verification Classes",
+    "schema:description": "We classify consensus checks into four classes based on the data required to verify them.",
+    "schema:about": [
+      { "@type": "schema:DefinedTerm", "schema:termCode": "H", "schema:alternateName": "Header-only", "schema:description": "Verifiable from the 80-byte header chain alone.", "schema:color": "#0969da" },
+      { "@type": "schema:DefinedTerm", "schema:termCode": "T", "schema:alternateName": "Transaction-level", "schema:description": "Requires the offending transaction plus its merkle inclusion proof.", "schema:color": "#1a7f37" },
+      { "@type": "schema:DefinedTerm", "schema:termCode": "F", "schema:alternateName": "Fraud-provable", "schema:description": "A compact fraud proof can demonstrate a violation using a small witness.", "schema:color": "#9a6700" },
+      { "@type": "schema:DefinedTerm", "schema:termCode": "U", "schema:alternateName": "UTXO-dependent", "schema:description": "Requires access to the unspent transaction output set.", "schema:color": "#cf222e" }
+    ],
+    "schema:hasPart": [
+      { "@type": "schema:Claim", "schema:name": "Proof-of-work meets difficulty target", "schema:additionalType": "H", "schema:description": "Block header (80 bytes)" },
+      { "@type": "schema:Claim", "schema:name": "Transaction signatures are valid", "schema:additionalType": "T", "schema:description": "Transaction + merkle proof + spent output scripts" },
+      { "@type": "schema:Claim", "schema:name": "Block weight does not exceed limit", "schema:additionalType": "F", "schema:description": "SHA-256 midstate proof (BIP 180)" },
+      { "@type": "schema:Claim", "schema:name": "Inputs reference existing unspent outputs", "schema:additionalType": "U", "schema:description": "UTXO set or equivalent commitment" }
+    ]
+  }
+  </script>
+</json-os>
+
+<script type="module" src="../json-os.js"></script>
+
+</body>
+</html>
